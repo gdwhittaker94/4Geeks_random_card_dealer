@@ -1,1 +1,58 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+.bg {
+    background-color: green;
+    display: grid;
+    height: 100vh;
+    align-items: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    width: min(350px, 80%);
+    min-height: 450px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 8px 15px 2px rgb(34, 34, 34);
+}
+
+.card__section {
+    padding: 20px;
+}
+
+.card__symbol {
+    height: 100px;
+    line-height: 100px;
+}
+
+.card__symbol--left {
+    text-align: left;
+}
+
+.card__symbol--right {
+    text-align: right;
+}
+
+.card__number {
+    height: 250px;
+    line-height: 250px;
+    text-align: center;    
+}
+
+.btn {
+    width: 150px;
+    margin-inline: auto;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    background-color: rgb(224, 224, 79);
+    border: none;
+    box-shadow: 1px 1px 1px 1px black;
+    justify-content: start;
+    align-self: start;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 1px 4px 6px 1px black;
+}
