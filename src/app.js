@@ -6,8 +6,10 @@ function log(input) {
 const cardSets = ["♦", "♥", "♠", "♣"];
 const cardNumbers = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 const number = document.getElementById("number");
-const symbolTop = document.getElementById("symbolTop");
-const symbolBottom = document.getElementById("symbolBottom");
+const symbolDiv = document.getElementsByClassName("card__symbol")
+
+// const symbolTop = document.getElementById("symbolTop");
+// const symbolBottom = document.getElementById("symbolBottom");
 const button = document.getElementById("btn");
 
 // Random Array Item
@@ -16,11 +18,20 @@ function randomItem(array) {
 }
 
 // Apply Random Items to HTML Elements
-
 function randomSymbol() {
-    let randomSybol = randomItem(cardSets);
-    symbolTop.innerText = randomSybol;
-    symbolBottom.innerText = randomSybol; 
+    let randomSymbol = randomItem(cardSets);
+
+    if (randomSymbol === "♦" || randomSymbol === "♥") {
+        for (let i = 0; i < symbolDiv.length; i++) {
+            symbolDiv[i].classList.add("card__symbol--red");
+            symbolDiv[i].textContent = randomSymbol;
+        }
+    } else {
+        for (let i = 0; i < symbolDiv.length; i++) {
+            symbolDiv[i].classList.remove("card__symbol--red");
+            symbolDiv[i].textContent = randomSymbol;
+        }
+    }
 }
 
 function randomNum() {
@@ -28,10 +39,9 @@ function randomNum() {
     number.innerText = randomNumber;
 }
 
-// Button Event Listeners 
+// Button Event Listeners
 button.addEventListener("click", randomSymbol);
 button.addEventListener("click", randomNum);
-
 
 // On page Load Event
 window.addEventListener("load", randomSymbol);

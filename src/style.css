@@ -26,12 +26,17 @@
     font-size: 7em;
 }
 
+.card__symbol--red {
+    color: rgb(209, 18, 18);
+}
+
 .card__symbol--left {
     text-align: left;
 }
 
 .card__symbol--right {
     text-align: right;
+    transform: rotateX(180deg);
 }
 
 .card__number {
