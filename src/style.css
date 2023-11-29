@@ -1,29 +1,28 @@
 .bg {
     background-color: green;
-    display: grid;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 45px;
 }
 
 .card {
     background-color: #fff;
+    width: min(250px, 80%);
     border-radius: 8px;
-    width: min(350px, 80%);
-    min-height: 450px;
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
     box-shadow: 2px 8px 15px 2px rgb(34, 34, 34);
+    margin-top: 20px;
 }
 
 .card__section {
-    padding: 20px;
+    padding-inline: 20px;
+    border-radius: 8px;
 }
 
 .card__symbol {
     height: 100px;
     line-height: 100px;
-    font-size: 7em;
+    font-size: 5em;
 }
 
 .card__symbol--red {
@@ -40,10 +39,17 @@
 }
 
 .card__number {
-    height: 250px;
-    line-height: 250px;
+    height: 150px;
+    line-height: 150px;
     text-align: center;
-    font-size: 8em;
+    font-size: 5em;
+}
+
+.externals {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
 }
 
 .btn {
@@ -51,6 +57,7 @@
     margin-inline: auto;
     padding: 10px;
     font-size: 1.2em;
+    font-weight: bold;
     line-height: 1.2em;
     border-radius: 5px;
     background-color: rgb(224, 224, 79);
@@ -65,12 +72,43 @@
 }
 
 #cardHistoryContainer {
-    background-color: white;
-    height: 50px;
-    color: black;
+    background-color: #97f8a5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#cardHistoryContainer p {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-block: 5px;
+    text-decoration: underline;
+}
+
+#cardHistoryContainer ul  {
+    padding: 0px;
+    margin: 0px;
 }
 
 #cardHistoryContainer ul li {
-    color: black;
+    list-style: none;
+    margin-block: 4px;
+    font-size: 18px;
 }
 
+@media screen and (min-width: 750px) {
+
+    .bg {
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .externals {
+        margin-top: 20px;
+    }
+}
